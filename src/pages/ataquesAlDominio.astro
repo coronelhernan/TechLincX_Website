@@ -1,0 +1,59 @@
+---
+import "../css/style.css";
+import Layout from "../layouts/Layout.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import LandingFooter from "../components/LandingFooter.astro";
+import SectionPageCiberataques from "../components/SectionPageCiberataques.astro";
+import PagesComponents from "../components/PagesComponents.astro";
+
+const attacksInfo = [
+  {
+    title: "Tipos de Ataques al Dominio",
+  },
+  {
+    title: "Cybersquatting",
+    text: "El Cybersquatting es cuando una persona registra un nombre de dominio que es idéntico o muy similar a una marca registrada, el nombre de una empresa famosa, o el nombre de una persona conocida, con la intención de aprovecharse del tráfico web de esa marca o de vender el dominio a la empresa o persona legítima a un precio mucho más alto. En resumen, el cybersquatter busca beneficiarse de la buena reputación de una marca registrada en lugar de crear contenido propio."
+  },
+  {
+    title: "Linking",
+    text: "Se refiere a la práctica de crear enlaces en un sitio web que apunten a otro sitio web, pero que se haga de una manera inapropiada, a menudo con fines de manipulación o para dañar la reputación de un sitio rival, existen dos tipos principales de linking en el contexto de ataques: Bad linking y Deep linking."
+  },
+  {
+    title: "Bad linking",
+    text: "Implica la creación de enlaces fraudulentos a un sitio web para manipular los resultados de los motores de búsqueda (SEO) o redirigir a los usuarios a sitios maliciosos."
+  },
+  {
+    title: "Deep Linking",
+    text: "Enlazar directamente a una página específica dentro de un sitio web sin tener en cuenta la estructura o la intención de los propietarios del sitio, lo que puede perjudicar su tráfico."
+  },
+  {
+    title: "Framing",
+    text: "Es una técnica mediante la cual un sitio web se muestra dentro de otro sitio web. En un ataque de framing, el atacante inserta el contenido de un sitio legítimo en el marco (frame) de su propio sitio web, creando la apariencia de que el usuario está navegando en el sitio original, pero en realidad está en el sitio del atacante. Esto puede llevar a la confusión de los usuarios, el robo de información personal (suplantación de identidad o phishing), o hacer que los usuarios realicen acciones sin saberlo."
+  },
+  {
+    title: "Reverse Cybersquatting",
+    text: "Se refiere a la situación opuesta al Cybersquatting. En este caso, la persona o empresa que posee un nombre de dominio legítimo es acusada de infracción por un titular de marca registrada. Es decir, una marca registrada demanda a alguien por el uso de un dominio que considera que infringe sus derechos, a pesar de que el propietario del dominio no lo registró con la intención de lucrar con la marca o de generar confusión."
+  }
+];
+---
+
+<Layout>
+  
+  <!-- Header -->
+  <LandingHeader />
+
+  <!-- Sección de "Daño Informático" -->
+  <main class="snap-y snap-mandatory relative w-full h-auto overflow-auto">
+    <SectionPageCiberataques />
+    <div class="snap-center">
+      <PagesComponents
+        color="white"
+        title="Daño Informático"
+        textBlocks={attacksInfo}
+      />
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <LandingFooter />
+</Layout>

@@ -1,0 +1,97 @@
+---
+
+// Props
+const {
+  color = "white",
+  textBlocks = [],
+  id = "seccion-general",
+} = Astro.props;
+---
+
+<style>
+  
+
+  main {
+    -ms-overflow-style: none; /* Para Internet Explorer */
+    scrollbar-width: none; /* Para Firefox */
+  }
+
+  main::-webkit-scrollbar {
+    display: none; /* Para Chrome, Safari y Opera */
+  }
+
+
+  /* Estilos generales para la sección */
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh; /* Asegura que la sección ocupe al menos la altura de la pantalla */
+    padding: 20px 30px; /* Espaciado general */
+    overflow-y: auto; /* Permite el scroll vertical si el contenido es mayor */
+  }
+
+  /* Ajuste del título de la sección */
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #c0c4d5;
+    margin-bottom: 30px;
+  }
+
+  /* Ajuste de los bloques de texto */
+  .text-block {
+    margin-bottom: 24px;
+  }
+
+  .text-block h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #c0c4d5;
+    margin-bottom: 12px;
+  }
+
+  .text-block p {
+    font-size: 1.125rem; /* Tamaño más legible para los párrafos */
+    color: #c0c4d5;
+    line-height: 1.6; /* Mejor legibilidad */
+  }
+</style>
+
+<section
+  id={id}
+  class="w-full landing-section bg-black h-auto text-left py-16 px-10 flex flex-col"
+  data-header-color={color}
+>
+  <!-- Header -->
+  <header class="text-left mb-8">
+    
+  </header>
+
+  <!-- Contenido de texto -->
+  <div class="text-[#c0c4d5] text-lg">
+    <!-- Iterar sobre los bloques de texto usando un ciclo for tradicional -->
+    {
+      textBlocks && textBlocks.length > 0 && (
+        <>
+          {(() => {
+            const result = [];
+            for (let i = 0; i < textBlocks.length; i++) {
+              const block = textBlocks[i];
+              result.push(
+                <div class="mb-6">
+                  {block.title && (
+                    <h2 class="text-2xl font-semibold mb-4">{block.title}</h2>
+                  )}
+                  <p>{block.text}</p>
+                </div>
+              );
+            }
+            return result;
+          })()}
+        </>
+      )
+    }
+  </div>
+</section>

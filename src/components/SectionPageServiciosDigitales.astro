@@ -1,0 +1,22 @@
+---
+import Section from "./Section.astro";
+
+const {
+  color = 'white',
+  title = 'Daño Informatico',
+  text = 'En la era digital, la gestión de la información electrónica y el uso de tecnologías en línea involucran una serie de cuestiones legales, técnicas y de seguridad. Los daños informáticos, que incluyen desde ataques cibernéticos hasta violaciones de seguridad, son una preocupación creciente en un mundo cada vez más conectado. A su vez, herramientas como las firmas digitales y las tecnologías de autenticación juegan un papel crucial en la validación de transacciones y la protección de datos. Estos aspectos son esenciales para entender cómo interactuamos con los sistemas digitales y cómo garantizamos la integridad y seguridad de las transacciones en el entorno electrónico.',
+  imageSrc = '/malwares-cibersecurity.avif',
+} = Astro.props;
+---
+
+<Section
+  color={color}
+  text={text}
+  title={title}
+  imageSrc={imageSrc}
+  showButton={false} 
+>
+  <div slot="header" class="flex flex-col items-center gap-2">
+    <h1 class="text-3xl font-normal text-black">{title}</h1>
+  </div>
+</Section>

@@ -1,0 +1,50 @@
+---
+import Logo from "./Logo.astro";
+import JoinUsButton from "./JoinUsButton.astro";
+---
+
+<header class="py-4 px-8 flex items-center border-b-1 text-white bg-black h-20 fixed top-0 w-full justify-between z-40">
+  <Logo />
+
+  <nav>
+    <ul class="flex gap-6">
+      <li>
+        <a
+          class="text-base text-white hover:text-green-500 border-b-2 border-transparent hover:border-green-500 transition-colors duration-300 ease-in-out"
+          href="/">Inicio</a>
+      </li>
+
+      <li>
+        <a
+          class="text-base text-white hover:text-green-500 border-b-2 border-transparent hover:border-green-500 transition-colors duration-300 ease-in-out"
+          href="/seguridadDigital">Seguridad Digital</a>
+      </li>
+
+      <li>
+        <a
+          class="text-base text-white hover:text-green-500 border-b-2 border-transparent hover:border-green-500 transition-colors duration-300 ease-in-out"
+          href="/ataquesAlDominio">Ataques al dominio</a>
+      </li>
+
+      <li>
+        <a
+          class="text-base text-white hover:text-green-500 border-b-2 border-transparent hover:border-green-500 transition-colors duration-300 ease-in-out"
+          href="/documentosElectronicos">Documentos Electrónicos</a>
+      </li>
+
+      <li>
+        <a
+          class="text-base text-white hover:text-green-500 border-b-2 border-transparent hover:border-green-500 transition-colors duration-300 ease-in-out"
+          href="/contratosInformaticos">Contratos</a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav>
+    <ul class="flex gap-6">
+      <li>
+        <JoinUsButton />
+      </li>
+    </ul>
+  </nav>
+</header>

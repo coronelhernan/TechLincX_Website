@@ -1,0 +1,23 @@
+---
+import Section from "./Section.astro";
+
+// Definición de las props, incluyendo la imagen
+const {
+  color = 'white',
+  title = 'Documentos Electronicos',
+  text = 'Los documentos electrónicos han transformado la gestión y validación de la información, reemplazando los formatos físicos tradicionales. Estos documentos, almacenados y transmitidos digitalmente, ofrecen mayor eficiencia y accesibilidad. La firma electrónica y firma digital, junto con tecnologías avanzadas como las huellas digitales y el reconocimiento de voz, aseguran su integridad y autenticidad. Esto los hace válidos para transacciones legales y contratos en el ámbito digital. Con la capacidad de validar documentos sin necesidad de soporte físico, se han abierto nuevas oportunidades para el comercio electrónico y la digitalización de procesos.',
+  imageSrc = '/huella.avif',  // URL de la imagen
+} = Astro.props;
+---
+
+<Section
+  color={color}
+  text={text}
+  title={title}
+  imageSrc= {imageSrc}  
+  showButton={false} 
+>
+  <div slot="header" class="flex flex-col items-center gap-2">
+    <h1 class="text-3xl font-normal text-black">{title}</h1>
+  </div>
+</Section>

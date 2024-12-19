@@ -1,0 +1,22 @@
+---
+import Section from "./Section.astro";
+
+const {
+  color = 'white',
+  title = 'Documentos Electronicos',
+  text = 'Los documentos electrónicos han reemplazado los formatos físicos tradicionales, permitiendo su validación y autenticación mediante herramientas como la firma electrónica y digital. Estos avances, junto con métodos de identificación como las huellas digitales y el reconocimiento de voz, aseguran la integridad y autenticidad de los documentos, facilitando su uso en transacciones legales y contratos en el ámbito digital.',
+  
+  imageSrc = 'datos-biometricos.avif', 
+} = Astro.props;
+---
+
+<Section
+  color={color}
+  text={text}
+  title={title}
+  imageSrc= {imageSrc}  
+>
+  <div slot="header" class="flex flex-col items-center gap-2">
+    <h1 class="text-3xl font-normal text-black">{title}</h1>
+  </div>
+</Section>

@@ -1,0 +1,22 @@
+---
+import Section from "./Section.astro";
+
+const {
+  color = 'white',
+  title = 'Contratos Informaticos',
+  text = 'Un contrato informático es un acuerdo legal entre dos o más partes que tiene como objetivo la creación, distribución, uso o intercambio de productos, servicios o información a través de medios informáticos, como plataformas en línea, software o servicios digitales. Estos contratos son esenciales en el contexto de la tecnología y las actividades digitales, y son fundamentales para regular las relaciones comerciales y legales en el ámbito informático. El contrato informático se utiliza para regular aspectos legales relacionados con la informática, la seguridad cibernética, el uso de plataformas digitales, la propiedad intelectual de productos digitales, la protección de datos personales, entre otros aspectos. A través de estos contratos, las partes acuerdan formalmente las condiciones bajo las cuales se intercambiarán productos o servicios digitales.',
+  imageSrc = '/programmer.avif', 
+} = Astro.props;
+---
+
+<Section
+  color={color}
+  text={text}
+  title={title}
+  imageSrc= {imageSrc} 
+  showButton={false}  
+>
+  <div slot="header" class="flex flex-col items-center gap-2">
+    <h1 class="text-3xl font-normal text-black">{title}</h1>
+  </div>
+</Section>

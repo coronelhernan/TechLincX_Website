@@ -1,0 +1,21 @@
+---
+import Section from "./Section.astro";
+
+const {
+  color = 'white',
+  title = 'Contrato de Desarrollo',
+  text = 'Un contrato de desarrollo de software es un acuerdo legal entre un cliente y un proveedor para la creación de aplicaciones o sistemas informáticos específicos. Este contrato detalla las condiciones bajo las cuales se llevará a cabo el desarrollo del software, incluyendo las partes involucradas, el objetivo del proyecto y el alcance del trabajo. Es fundamental para establecer expectativas claras y garantizar que ambas partes comprendan sus responsabilidades y compromisos a lo largo del proceso de desarrollo.',
+  imageSrc = '/software-enginner.avif',  
+} = Astro.props;
+---
+
+<Section
+  color={color}
+  text={text}
+  title={title}
+  imageSrc= {imageSrc}  
+>
+  <div slot="header" class="flex flex-col items-center gap-2">
+    <h1 class="text-3xl font-normal text-black">{title}</h1>
+  </div>
+</Section>

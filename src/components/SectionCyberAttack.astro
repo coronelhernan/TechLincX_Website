@@ -1,0 +1,21 @@
+---
+import Section from "./Section.astro";
+
+const {
+  color = 'white',
+  title = 'Ciberataques',
+  text = 'Los ciberataques son acciones ilegales realizadas en el ciberespacio con el fin de dañar, robar o manipular información. Estos ataques pueden incluir prácticas como el cybersquatting, el linking inapropiado y el framing, entre otros. En Argentina, estas actividades son tipificadas como delitos informáticos, que abarcan desde el robo de datos personales hasta la suplantación de identidad y el robo de información estratégica. Estos delitos son cometidos por ciberdelincuentes a través de dispositivos electrónicos y redes informáticas.',
+  imageSrc = '/cyberattack.avif', 
+} = Astro.props;
+---
+
+<Section
+  color={color}
+  text={text}
+  title={title}
+  imageSrc= {imageSrc}  
+>
+  <div slot="header" class="flex flex-col items-center gap-2">
+    <h1 class="text-3xl font-normal text-black">{title}</h1>
+  </div>
+</Section>

@@ -4,17 +4,14 @@ import LinkButton from "./LinkButton.astro";
 // Props
 const { text, title, imageSrc, showButton = true } = Astro.props;  // showButton por defecto es true
 ---
-
 <section
-  class="grid w-full landing-section bg-black h-screen text-center overflow-hidden relative top-0 bottom-0"
-  style="grid-template-columns: 1fr 1fr;"
+  class="flex flex-col w-full landing-section bg-black h-auto sm:h-screen text-center overflow-hidden relative top-0 bottom-0 sm:grid sm:grid-cols-2"
 >
   <!-- Main -->
-  <main class="bg-black w-full h-full py-20 font-bold text-xl flex flex-col items-start justify-center gap-6 p-10">
+  <main class="bg-black w-full h-auto py-10 font-bold text-xl flex flex-col items-start justify-center gap-6 p-10 sm:h-full">
     <div slot="content" class="flex flex-col items-start justify-start gap-6 text-left">
-      <h1 class="text-[#c0c4d5] font-bold text-4xl">{title}</h1> <!-- Solo el título de la prop -->
-
-      <p class="text-[#c0c4d5] font-medium whitespace-pre-line">{text}</p>
+      <h1 class="text-[#c0c4d5] font-bold text-3xl sm:text-4xl">{title}</h1> <!-- Título ajustado para pantallas pequeñas -->
+      <p class="text-[#c0c4d5] font-medium text-base sm:text-xl whitespace-pre-line">{text}</p> <!-- Texto ajustado para pantallas pequeñas -->
       
       <!-- Mostrar el botón solo si showButton es true -->
       {showButton && <LinkButton />}
@@ -22,7 +19,7 @@ const { text, title, imageSrc, showButton = true } = Astro.props;  // showButton
   </main>
 
   <!-- Aside -->
-  <aside class="bg-black w-full h-full flex justify-center items-center">
+  <aside class="bg-black w-full h-auto flex justify-center items-center sm:h-full">
     <div class="flex justify-center items-center px-6">
       <img
         src={imageSrc}

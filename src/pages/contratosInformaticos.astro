@@ -5,41 +5,10 @@ import LandingHeader from "../components/LandingHeader.astro";
 import LandingFooter from "../components/LandingFooter.astro";
 import SectionPageContratos from "../components/SectionPageContratos.astro";
 import PagesComponents from "../components/PagesComponents.astro";
-
-const contratsInfo = [
-  {
-    title: "Clasificación de Contratos Informáticos",
-    text: "Los contratos informáticos se pueden clasificar en diferentes tipos, dependiendo de la naturaleza del acuerdo y las partes involucradas. Las clasificaciones más comunes son:"
-  },
-  {
-    title: "Contratos de Licencia de Software",
-    text: "Permiten el uso de software bajo ciertas condiciones y restricciones. Pueden ser licencias propietarias (el usuario no tiene derecho a modificar ni distribuir el software) o licencias de código abierto (el usuario puede modificar el software)."
-  },
-  {
-    title: "Contratos de Desarrollo de Software",
-    text: "Se establecen cuando una parte acuerda crear un software personalizado para otra parte, especificando los términos sobre el diseño, la entrega, las actualizaciones y las garantías."
-  },
-  {
-    title: "Contratos de Hosting o Alojamiento Web",
-    text: "Regulan la relación entre un proveedor de servicios de alojamiento web y el cliente, estableciendo las condiciones sobre la disponibilidad, el uso del servidor, el espacio de almacenamiento y la seguridad."
-  },
-  {
-    title: "Contratos de Servicios en la Nube",
-    text: "Regulan el acceso y el uso de recursos informáticos a través de internet, como almacenamiento, software y servicios de procesamiento de datos. Este tipo de contrato abarca el uso de servicios de terceros para el almacenamiento de datos y el acceso a aplicaciones sin necesidad de tener infraestructuras propias."
-  },
-  {
-    title: "Contratos de Comercio Electrónico",
-    text: "Se dan entre vendedores y compradores en plataformas de comercio electrónico, regulando aspectos como pagos, entregas, derechos del consumidor, devoluciones, etc."
-  },
-  {
-    title: "Contratos de Protección de Datos Personales",
-    text: "Regulan la recolección, el procesamiento y el almacenamiento de datos personales por parte de empresas o individuos. Son fundamentales para cumplir con leyes de privacidad como el RGPD (Reglamento General de Protección de Datos)."
-  },
-];
-
+import { contratsInfo } from "../data/data.js";
 ---
 
-<Layout>
+<Layout title="TechLincX | Contratos Informaticos">
   <!-- Header -->
   <LandingHeader />
 

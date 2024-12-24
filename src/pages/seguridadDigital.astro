@@ -5,48 +5,21 @@ import LandingHeader from "../components/LandingHeader.astro";
 import LandingFooter from "../components/LandingFooter.astro";
 import SectionPageServiciosDigitales from "../components/SectionPageServiciosDigitales.astro";
 import PagesComponents from "../components/PagesComponents.astro";
-
-const damageInfo = [
-  {
-    title: 'Daños Informáticos',
-    text: 'El daño informático se refiere a cualquier lesión o menoscabo causado a intereses legítimos mediante la utilización de medios electrónicos destinados al tratamiento de la información.'
-  },
-  {
-    title: 'Tipos de Daños Informáticos',
-    text: 'Estos daños pueden incluir alteraciones en la integridad de la información, acceso no autorizado a datos, o la interrupción del servicio, entre otros. A menudo, estos daños son consecuencia de vulnerabilidades en sistemas y redes.'
-  },
-  {
-    title: 'Funcionamiento Subjetivo y Actuación en Redes',
-    text: 'La presentación de una web es un claro ejemplo de funcionamiento objetivo y subjetivo de la responsabilidad, ya que involucra actores con diferentes roles dentro de una red: El proveedor de servicio de acceso a la red, el titular de la página, y Otros que pueden suministrar contenidos diversos, como en los casos de avisos clasificados, hackers o newsgroups.'
-  },
-  {
-    title: 'Acceso a Internet',
-    text: 'El servidor permite al usuario acceder a páginas web almacenadas en diferentes servidores a través de la red. Este acceso facilita la libre navegación por internet mediante el uso de buscadores y directorios, que permiten al usuario encontrar los recursos que necesita.'
-  },
-  {
-    title: 'Cuenta de Correo Electrónico',
-    text: 'El servidor ofrece la posibilidad de que el usuario, además de navegar, actúe como comunicador. Puede enviar correos electrónicos, que incluyen mensajes y archivos adjuntos, y estos son almacenados en el servidor hasta que el destinatario los reciba.'
-  },
-  {
-    title: 'Alojamiento de Páginas Web',
-    text: 'El servidor proporciona el espacio necesario para que los usuarios puedan almacenar y publicar su información en línea. Plataformas como AWS, Heroku, Netlify, y GitHub Pages son ejemplos comunes de servicios de alojamiento web, que permiten que cualquier usuario suba contenido a la web.'
-  }
-];
-
+import { damageInfo } from "../data/data.js"; 
 ---
 
-<Layout>
+<Layout title="TechLincX | Seguridad Digital">
   <!-- Header -->
   <LandingHeader />
 
   <!-- Sección de "Daño Informático" -->
   <main class="snap-y snap-mandatory relative w-full h-auto overflow-auto">
-    <SectionPageServiciosDigitales/>
+    <SectionPageServiciosDigitales />
     <div class="snap-center">
       <PagesComponents
         color="white"
         title="Daño Informático"
-        textBlocks={damageInfo}
+        textBlocks={damageInfo} // Pasar los datos importados como prop
       />
     </div>
   </main>

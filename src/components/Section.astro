@@ -2,24 +2,62 @@
 import LinkButton from "./LinkButton.astro";
 
 // Props
-const { text, title, imageSrc, showButton = true } = Astro.props;  // showButton por defecto es true
+const { text, title, imageSrc, showButton = true } = Astro.props; // showButton por defecto es true
 ---
+
+<style>
+   @media (max-width: 600px) {
+    section {
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr; /* Una sola columna */
+      grid-template-areas:
+        "aside"
+        "main"; /* Orden del contenido, el aside primero */
+      gap: 0px;
+    }
+
+    aside {
+      grid-area: aside;
+    }
+
+    main {
+      grid-area: main;
+      margin-bottom: 80px;
+      gap: 2px;
+    }
+  }
+</style>
+
 <section
   class="flex flex-col w-full landing-section bg-black h-auto sm:h-screen text-center overflow-hidden relative top-0 bottom-0 sm:grid sm:grid-cols-2"
 >
   <!-- Main -->
-  <main class="bg-black w-full h-auto py-10 font-bold text-xl flex flex-col items-start justify-center gap-6 p-10 sm:h-full">
-    <div slot="content" class="flex flex-col items-start justify-start gap-6 text-left">
-      <h1 class="text-[#c0c4d5] font-bold text-3xl sm:text-4xl">{title}</h1> <!-- Título ajustado para pantallas pequeñas -->
-      <p class="text-[#c0c4d5] font-medium text-base sm:text-xl whitespace-pre-line">{text}</p> <!-- Texto ajustado para pantallas pequeñas -->
-      
+  <main
+    class="bg-black w-full h-auto py-10 font-bold text-xl flex flex-col items-start justify-center gap-6 p-10 sm:h-auto sm:order-last lg:order-first"
+  >
+    <div
+      slot="content"
+      class="flex flex-col items-start justify-start gap-4 text-left"
+    >
+      <h1 class="text-[#c0c4d5] font-bold sm:text-2xl lg:text-3xl">{title}</h1>
+      <!-- Título ajustado para pantallas pequeñas -->
+      <p
+        class="text-[#c0c4d5] font-medium text-base sm:text-xl whitespace-pre-line"
+      >
+        {text}
+      </p>
+      <!-- Texto ajustado para pantallas pequeñas -->
+
       <!-- Mostrar el botón solo si showButton es true -->
       {showButton && <LinkButton />}
     </div>
   </main>
 
   <!-- Aside -->
-  <aside class="bg-black w-full h-auto flex justify-center items-center sm:h-full">
+  <aside
+    class="bg-black w-full h-auto flex justify-center items-center sm:order-first lg:order-last sm:h-auto"
+  >
     <div class="flex justify-center items-center px-6">
       <img
         src={imageSrc}

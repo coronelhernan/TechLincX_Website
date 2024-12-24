@@ -3,7 +3,8 @@ import Logo from "./Logo.astro";
 import JoinUsButton from "./JoinUsButton.astro";
 ---
 
-<header class="py-4 px-8 items-center border-b text-white bg-black h-20 fixed top-0 w-full justify-between z-40 hidden lg:flex">
+
+<header id="header" class="py-4 px-8 items-center border-b-1 text-white bg-black h-20 fixed top-0 w-full justify-between z-40 hidden lg:flex">
   <Logo />
 
   <nav>
@@ -50,7 +51,32 @@ import JoinUsButton from "./JoinUsButton.astro";
 </header>
 
 <!-- Agrega este bloque para pantallas pequeñas -->
-<div class="flex lg:hidden justify-between items-center bg-black h-20 fixed top-0 w-full px-4 z-50">
+<div class="flex lg:hidden justify-between items-center bg-black h-20 top-0 w-full px-4 z-50">
   <Logo />
-  <button class="text-red-500">☰</button>
-</div>.
+  <button id="btn-menu" class="text-green-500 text-3xl">☰</button>
+</div>
+
+<!-- El menú que se mostrará cuando se haga clic en el botón -->
+<div id="menu" class="lg:hidden fixed top-0 left-0 w-full h-full bg-black text-white flex flex-col justify-center items-center space-y-6 transform translate-x-full transition-transform duration-300 ease-in-out z-40">
+  <nav>
+    <ul class="flex flex-col gap-6 items-center">
+      <li>
+        <a class="text-lg hover:text-green-500" href="/">Inicio</a>
+      </li>
+      <li>
+        <a class="text-lg hover:text-green-500" href="/seguridadDigital">Seguridad Digital</a>
+      </li>
+      <li>
+        <a class="text-lg hover:text-green-500" href="/ataquesAlDominio">Ataques al dominio</a>
+      </li>
+      <li>
+        <a class="text-lg hover:text-green-500" href="/documentosElectronicos">Documentos Electrónicos</a>
+      </li>
+      <li>
+        <a class="text-lg hover:text-green-500" href="/contratosInformaticos">Contratos</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<script src="/src/js/Controllers/buttonHeader.js"></script>

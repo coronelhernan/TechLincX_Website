@@ -1,23 +1,36 @@
-html, body {
-  height: 100%; 
-  margin: 0;     
-  overflow-y: auto;  
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow-y: auto;
+  border: none;
 }
 
-html::-webkit-scrollbar, body::-webkit-scrollbar {
-  display: none; 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 body {
-  -ms-overflow-style: none; 
-  scrollbar-width: none;    
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 main {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 main::-webkit-scrollbar {
-  display: none; 
+  display: none;
+}
+
+@media (max-width: 640px) {
+  /* Pantallas pequeñas (mobile) */
+  main {
+    scroll-snap-type: none; /* Desactiva el scroll snap */
+  }
+  main > div {
+    scroll-snap-align: none; /* Sin alineación para las secciones */
+  }
 }

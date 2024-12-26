@@ -25,12 +25,18 @@ main::-webkit-scrollbar {
   display: none;
 }
 
+.hidden-element {
+  opacity: 0;
+  pointer-events: none; 
+  transition: opacity 0.2s ease-in-out;
+}
+
 @media (max-width: 640px) {
-  /* Pantallas pequeñas (mobile) */
   main {
-    scroll-snap-type: none; /* Desactiva el scroll snap */
+    scroll-snap-type: none; 
   }
+
   main > div {
-    scroll-snap-align: none; /* Sin alineación para las secciones */
+    scroll-snap-align: none; 
   }
 }
